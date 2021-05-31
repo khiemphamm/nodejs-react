@@ -1,0 +1,25 @@
+.history-page{
+    overflow: auto;
+}
+.history-page h2,h4{
+    text-align: center;
+    margin: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+.history-page table{
+    margin: 20px 0;
+    width: 100%;
+}
+.history-page table,th,tr,td{
+    border:  2px solid #ddd;
+    border-collapse: collapse;
+}
+th,td{
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+}
+table a{
+    color: royalblue;
+}

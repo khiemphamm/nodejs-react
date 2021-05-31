@@ -7,12 +7,12 @@ import ProductsItem from '../utils/ProductItems/ProductsItem';
 const Details = () => {
     const params = useParams();
     const state = useContext(GlobalState)
-    const [products] = state.productsApi.products
+    const [products] = state.productsAPI.products
     const [detailProduct,setDetailProduct] = useState([])
     useEffect(() => {
         if(params.id){
             products.forEach(product => {
-                if(product.product_id === params.id) 
+                if(product._id === params.id) 
                 setDetailProduct(product)
             });
         }

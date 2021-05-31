@@ -8,6 +8,7 @@ import userRouter from './routes/userRoutes.js'
 import categoryRouter from './routes/categoryRoutes.js'
 import uploadRouter from './routes/upload.js'
 import prodcutRouter from './routes/productRoutes.js'
+import paymentRouter from './routes/paymentRoutes.js'
 
 
 
@@ -42,6 +43,7 @@ app.use('/user', userRouter);
 app.use('/api',categoryRouter);
 app.use('/api',uploadRouter);
 app.use('/api',prodcutRouter)
+app.use('/api',paymentRouter)
 
 const port = process.env.PORT || 8000
 app.listen(port,()=>{

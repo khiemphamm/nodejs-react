@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import { axiosClient } from '../../../api/axiosClient'
 
 const Login = () => {
     const [user,setUser] = useState({
@@ -14,8 +13,8 @@ const Login = () => {
     const loginSubmit =async (e) =>{
         e.preventDefault()
         try {
-            await axiosClient.post(`/user/login`,{...user})
-            localStorage.setItem('firtsLogin',true)
+            await axios.post(`/user/login`,{...user})
+            localStorage.setItem('firstLogin',true)
             window.location.href = "/";
         } catch (err) {
             alert(err.response.data.msg)

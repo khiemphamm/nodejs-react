@@ -1,5 +1,6 @@
 import Products from "../models/productModels.js";
 
+
 export const getProducts = async (req,res)=>{
     try {
         const features = new APIfeatures(Products.find(),req.query).filtering().sorting().paginating()
@@ -48,7 +49,7 @@ export const createProducts = async (req,res)=>{
 
 export const deleteProducts = async (req,res)=>{
     try {
-        await Products.findByIdAndDelete(req.prams.id)
+        await Products.findByIdAndDelete(req.params.id)
         res.json({msg:"Delete a Products"})
     } catch (err) {
         return res.status(500).json({msg:err.message})
@@ -109,7 +110,7 @@ export const updateProducts = async (req,res)=>{
      }
      paginating(){
          const page = this.queryString.page * 1 || 1
-         const limit = this.queryString.limit *1 || 8
+         const limit = this.queryString.limit *1 || 12
          const skip = (page-1) * limit
          this.query = this.query.skip(skip).limit(limit)
         return this
